@@ -1,0 +1,17 @@
+@extends('layouts.app')
+@section('content')
+<h2 class="bg-dark text-white">Lista de Usuarios</h2>
+<a href="{{route('usuarios.create')}}" class="btn btn-primary">Nuevo</a>
+<table class="table" >
+	<th>#</th>
+	<th>nombre</th>
+	<th>cedula</th>
+	@foreach($users as $u)
+	<tr>
+		<td>{{$loop->iteration}}</td>
+		<td>{{$u->usu_nombre}}</td>
+		<td>{{$u->usu_cedula}}</td>
+	</tr>
+	@endforeach
+</table>
+@endsection
