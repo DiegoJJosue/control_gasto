@@ -20,19 +20,15 @@ class usersTable extends Migration
             $table->string('usu_direccion');
             $table->string('usu_telefono');
             $table->string('usu_cedula');
-
             $table->integer('usu_estado')->default(1);
-
             $table->string('usu_estado_civil')->nullable();
             $table->string('email')->unique();
             $table->string('password');
-
-            $table->foreignId('car_id')->references('car_id')->on('cargo')->default(1);
-            $table->foreignId('per_id')->references('per_id')->on('permisos')->default(1);
-
+            $table->foreignId('cat_id')->references('cat_id')->on('categoria');
             $table->rememberToken();
             $table->timestamps();
             $table->timestamp('email_verified_at')->nullable();
+
             
         });
     }
