@@ -17,11 +17,10 @@ class RegmovimientosTable extends Migration
             $table->id('mov_id');
             $table->string('mov_fecha');
             $table->string('mov_cantidad');
-
             $table->foreignId('usu_id')->references('usu_id')->on('users');
             $table->foreignId('cat_id')->references('cat_id')->on('categoria');
             $table->foreignId('tip_id')->references('tip_id')->on('tipo');
-
+            
         });
     }
 

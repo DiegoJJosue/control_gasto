@@ -30,9 +30,9 @@
                     <img src="https://wallo.com/media/aplicacion-control-gastos-android.png" width="30" height="30" class="d-inline-block align-top"   alt="">CONTROL DE GASTOS
                       <a class="nav-item nav-link" href="{{route('usuarios')}}">Usuarios</a>
                       <a class="nav-item nav-link" href="{{route('categorias')}}">Categoria</a>
-                      <a class="nav-item nav-link" href="#">Permiso</a>
+                      <a class="nav-item nav-link" href="{{route('movimientos')}}">Movimiento</a>
                       <a class="nav-item nav-link" href="#">Cargo</a>
-                      <a class="nav-item nav-link" href="#">Tipo</a>
+                      <a class="nav-item nav-link" href="#">Registro </a>
                       <a class="nav-item nav-link" href="#">Control</a>
                 @endguest
 
