@@ -15,9 +15,9 @@ class TipoController extends Controller
     public function index()
     {
         //
-         $tipos=tipo::all();
+         $tipo=tipo::all();
         return view('tipo.index')
-        ->with('tipos',$tipos)
+        ->with('tipos',$tipo)
         ;
     }
 
@@ -65,9 +65,9 @@ class TipoController extends Controller
      */
     public function edit($id)
     {
-        $tipos=Tipo::find($id);
+        $tipo=Tipo::find($id);
         return view('tipo.edit')
-        ->with('tipos',$tipos)
+        ->with('tipo',$tipo)
         ;
     }
 

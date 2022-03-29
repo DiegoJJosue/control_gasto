@@ -3,7 +3,7 @@
 <h2 class="bg-dark text-white">Lista de Categorias</h2>
 <a href="{{route('categorias.create')}}" class="btn btn-primary">Nuevo</a>
 
-<table class="table">
+<table class="table table-striped">
 	<th>#</th>
 	<th>Detalle</th>
 	<th>Acciones</th>

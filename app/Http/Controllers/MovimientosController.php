@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Tipo;
+use App\Movimientos;
+use App\User;
+use App\Categorias;
+use DB;
+use Auth;
 
 class MovimientosController extends Controller
 {
@@ -12,10 +17,29 @@ class MovimientosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(request $request)
     {
-        //
-      return view('movimientos.index');
+        $data=$request->all();
+        $desde=date('Y-m-d');
+        $hasta=date('y-m-d');
+        if (isset($data['desde'])) {
+        $desde=$data['desde'];
+        $hasta=$data['hasta'];
+        }
+
+        $movimientos=DB::select("
+        SELECT * FROM movimientos m 
+        JOIN users u ON m.usu_id=u.usu_id
+        JOIN tipo t ON m.tip_id=t.tip_id
+        WHERE m.mov_fecha BETWEEN '$desde' AND '$hasta'
+
+            ");
+
+        return view('movimientos.index')
+         ->with('movimientos',$movimientos)
+         ->with('desde',$desde)
+         ->with('hasta',$hasta)
+         ;
     }
 
     /**
@@ -26,9 +50,9 @@ class MovimientosController extends Controller
     public function create()
     {
         //
-        $tipos=Tipo::all();
-        return view('movimientos.create')
-        ->with('tipos',$tipos)
+        $movimientos=movimientos::all();
+        $tipos=tipo::all();
+        return view('movimientos.create')->with('movimientos',$movimientos)->with('tipos',$tipos)
         ;
     }
 
@@ -40,7 +64,13 @@ class MovimientosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data=$request->all();
+       $data['usu_id']=Auth::user()->usu_id;
+        
+       $data['cat_id']=Auth::user()->usu_id;
+        movimientos::create($data);
+        return redirect(route('movimientos'));
+
     }
 
     /**
@@ -62,7 +92,11 @@ class MovimientosController extends Controller
      */
     public function edit($id)
     {
-        //
+        $movimientos=movimientos::find($id);
+        $tipo=Tipo::all();
+        return view('movimientos.edit')
+        ->with('movimientos',$movimientos)->with('tipo',$tipo)
+        ;
     }
 
     /**
@@ -74,7 +108,10 @@ class MovimientosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $Mov=tipo::find($id);
+        $Mov->update($request->all());
+
+        return redirect(route('movimientos'));
     }
 
     /**

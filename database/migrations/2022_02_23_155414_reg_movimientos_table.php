@@ -13,7 +13,7 @@ class RegmovimientosTable extends Migration
      */
     public function up()
     {
-        Schema::create('reg_movimientos', function (Blueprint $table) {
+        Schema::create('movimientos', function (Blueprint $table) {
             $table->id('mov_id');
             $table->string('mov_fecha');
             $table->string('mov_cantidad');
