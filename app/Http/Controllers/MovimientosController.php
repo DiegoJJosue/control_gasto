@@ -9,6 +9,7 @@ use App\User;
 use App\Categorias;
 use DB;
 use Auth;
+use PDF;
 
 class MovimientosController extends Controller
 {
@@ -19,6 +20,12 @@ class MovimientosController extends Controller
      */
     public function index(request $request)
     {
+
+    // $pdf = App('dompdf.wrapper');
+    // $pdf->loadHTML('<h1>Hola mundo PDF</h1>');
+    // return $pdf->stream();
+      
+
         $data=$request->all();
         $desde=date('Y-m-d');
         $hasta=date('y-m-d');
@@ -32,8 +39,14 @@ class MovimientosController extends Controller
         JOIN users u ON m.usu_id=u.usu_id
         JOIN tipo t ON m.tip_id=t.tip_id
         WHERE m.mov_fecha BETWEEN '$desde' AND '$hasta'
-
             ");
+
+//boton del pdf
+            if(isset($data['btn_pdf'])){
+            $data=['movimientos'=>$movimientos];
+            $pdf = PDF::loadView('movimientos.reporte', $data);
+            return $pdf->stream('reporte.pdf');
+     }
 
         return view('movimientos.index')
          ->with('movimientos',$movimientos)

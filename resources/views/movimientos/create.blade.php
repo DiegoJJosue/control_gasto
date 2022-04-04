@@ -24,7 +24,7 @@
 
 			<div  class="col-md-6" >
 				INGRESOS<input type="radio" name="tip_id" value="1">
-				EGRESOS<input type="radio" name="tip_id" value="0">
+				EGRESOS<input type="radio" name="tip_id" value="2">
 			</div>
 
 		</div>
