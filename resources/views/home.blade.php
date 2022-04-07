@@ -14,7 +14,8 @@
                         </div>
                     @endif
 
-                    {{ __('Has iniciado seccion!') }}
+                    {{ __('Bienvenido a la empreza :D') }}
+        <div align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/LOGO_FAGOR.jpg/640px-LOGO_FAGOR.jpg"></div>
                 </div>
             </div>
         </div>

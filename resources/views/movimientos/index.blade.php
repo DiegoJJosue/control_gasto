@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
-
+<div class="container">
+    
 <h2 class="bg-dark text-white">Lista de Movimientos</h2>
 <a href="{{route('movimientos.create')}}" class="btn btn-primary btn-sm">Nuevo</a>
 
@@ -21,8 +22,8 @@
     <th>Nombre</th>
     <th>Apellido</th> 
     <th>Cedula</th>
-    <th>Estado</th>
-    <?php
+    <th>Email</th>
+        <?php
     $t_ing=0;
     $t_egr=0;
     $t_saldo=0;
@@ -39,7 +40,9 @@
         <td>{{$mov->usu_nombre}}</td>
         <td>{{$mov->usu_apellido}}</td>
         <td>{{$mov->usu_cedula}}</td>
-        <td>{{$mov->usu_estado}}</td>
+        <td>{{$mov->email}}</td>
+
+        
         <td>
             
             <div class="row">
@@ -69,6 +72,7 @@
 
     @endforeach
 </table>
+</div>
 
 
 @endsection

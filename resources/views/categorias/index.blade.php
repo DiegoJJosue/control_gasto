@@ -1,5 +1,6 @@
  @extends('layouts.app')
 @section('content')
+<div class="container">
 <h2 class="bg-dark text-white">Lista de Categorias</h2>
 <a href="{{route('categorias.create')}}" class="btn btn-primary">Nuevo</a>
 
@@ -43,6 +44,7 @@
 	@endforeach
 
 </table>
+</div>
 
 @endsection
 

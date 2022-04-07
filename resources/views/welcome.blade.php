@@ -70,29 +70,23 @@
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
+                        <a href="{{ route('login') }}">Entrar</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
+                            <a href="{{ route('register') }}">Registrarte</a>
                         @endif
                     @endauth
                 </div>
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
-                    CONTROL DE GASTOS
+                <div class="title m-b-md"> 
+                    CONTROL DE GASTOS ELECTRONICOS
+                    <div align="center"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1SLyO1Gk8B_eW8pmH6XNqCQKO2gBD6LB-Ug2lEf1FxWAZHontq6KSFI5QVm-0eeBOAjA&usqp=CAU"></div>
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    
                 </div>
             </div>
         </div>

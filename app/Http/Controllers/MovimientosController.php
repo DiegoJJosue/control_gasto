@@ -121,9 +121,8 @@ class MovimientosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $Mov=tipo::find($id);
+        $Mov=Movimientos::find($id);
         $Mov->update($request->all());
-
         return redirect(route('movimientos'));
     }
 
@@ -135,6 +134,7 @@ class MovimientosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Movimientos::destroy($id);
+        return redirect(route('movimientos'));    
     }
 }

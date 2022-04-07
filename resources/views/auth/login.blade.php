@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="container">
+    <div align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/LOGO_FAGOR.jpg/640px-LOGO_FAGOR.jpg"></div>
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">

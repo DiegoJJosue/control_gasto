@@ -21,7 +21,7 @@ class UsuarioSeeder extends Seeder
         	'email'=>'diegoo@gmail.com',
         	'password'=>bcrypt('1234567898'),
         	'created_at'=>date('2022-03-21'),
-        	'cat_id'=>1
+        	
         ]);
     }
 }

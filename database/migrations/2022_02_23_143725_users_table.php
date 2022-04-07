@@ -24,7 +24,7 @@ class usersTable extends Migration
             $table->string('usu_estado_civil')->nullable();
             $table->string('email')->unique();
             $table->string('password');
-            $table->foreignId('cat_id')->references('cat_id')->on('categoria');
+            
             $table->rememberToken();
             $table->timestamps();
             $table->timestamp('email_verified_at')->nullable();
